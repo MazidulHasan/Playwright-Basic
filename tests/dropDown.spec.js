@@ -23,6 +23,35 @@ test('Handel Dropdowns', async ({ page }) => {
     const countryOptionsArray = await page.$$('#country option');
     console.log("Number of Options",countryOptionsArray.length);
     await expect(countryOptionsArray.length).toBe(10);
+    
+    // 2. Check presence of vlaue in the dropdown
+    const content = await page.locator('#country').textContent();
+    await expect(content.includes('India')).toBeTruthy();
+    // or
+    //  Presence of value in the dropdown - using looping
+    const options = await page.$$('#country option')
+    let status = false;
+    for(const option of options){
+        let value = await option.textContent();
+        if (value.includes('France')) {
+            status = true;
+            break;
+        }
+    }
+    expect(status).toBeTruthy();
+
+
+    // 3.select option from dropdown using loop
+    const options2 = await page.$$('#country option')
+    for(const option of options2){
+        let value = await option.textContent();
+        if (value.includes('France')) {
+            await page.selectOption("#country", value)
+            break;
+        }
+    }
+    const newContent = await page.locator('#country').textContent();
+    await expect(content.includes('France')).toBeTruthy();
 
 
     await page.waitForTimeout(5000);
