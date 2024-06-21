@@ -16,8 +16,8 @@ test('Drag and drop', async ({ page }) => {
     // Aoorpach 2
     const seoul = await page.locator("#box5");
     const southKorea = await page.locator("#box105");
-    
-    await seoul.dragTo(southKorea);
+
+    await seoul.dragTo(southKorea); 
 
     await page.waitForTimeout(5000);
 })
