@@ -1,0 +1,44 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="3" errors="0" time="11.188148">
+<testsuite name="playwrightReporter.spec.js" timestamp="2024-06-30T16:26:55.235Z" hostname="chromium" tests="3" failures="0" skipped="1" time="8.634" errors="0">
+<testcase name="Playwright Rerporting 1" classname="playwrightReporter.spec.js" time="7.575">
+</testcase>
+<testcase name="Playwright Reporting 2" classname="playwrightReporter.spec.js" time="1.059">
+</testcase>
+<testcase name="Playwright Reporting 3" classname="playwrightReporter.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="playwrightReporter.spec.js" timestamp="2024-06-30T16:26:55.235Z" hostname="firefox" tests="3" failures="0" skipped="1" time="10.994" errors="0">
+<testcase name="Playwright Rerporting 1" classname="playwrightReporter.spec.js" time="9.018">
+</testcase>
+<testcase name="Playwright Reporting 2" classname="playwrightReporter.spec.js" time="1.976">
+</testcase>
+<testcase name="Playwright Reporting 3" classname="playwrightReporter.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="playwrightReporter.spec.js" timestamp="2024-06-30T16:26:55.235Z" hostname="webkit" tests="3" failures="0" skipped="1" time="11.375" errors="0">
+<testcase name="Playwright Rerporting 1" classname="playwrightReporter.spec.js" time="9.865">
+</testcase>
+<testcase name="Playwright Reporting 2" classname="playwrightReporter.spec.js" time="1.51">
+</testcase>
+<testcase name="Playwright Reporting 3" classname="playwrightReporter.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
