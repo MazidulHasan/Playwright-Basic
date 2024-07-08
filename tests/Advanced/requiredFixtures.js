@@ -1,19 +1,23 @@
-const base = require('@playwright/test');
-const { orangeLoginPage, OrangeLoginPage } = require('./pages/orangeLoginPage')
+const { test } = require('@playwright/test');
+const OrangeLoginPage = require('./pages/orangeLoginPage').OrangeLoginPage;
 
-exports.test = base.test.extend({
-    loginDemo: async({page},use) =>{
-        const loginPage = new OrangeLoginPage(page);
-        await loginPage.gotoURL();
-        await loginPage.loginAction('Admin','admin123');
-        if (await loginPage.loginStatus) {
-            console.log('Success login');
-        }
-        // Use the fixture value in the test.
-        await use(loginDemo);
+exports.test = test.extend({
+  loginDemo: async ({ page }, use) => {
+    const loginPage = new OrangeLoginPage(page);
+    await use(loginPage);
+  },
+  loggedInPage: async ({ loginDemo }, use) => {
+    // Function to handle login and check status
+    const performLogin = async (username, password) => {
+      await loginDemo.gotoURL();
+      await loginDemo.loginAction(username, password);
+      const isLoggedIn = await loginDemo.loginStatus();
+      if (!isLoggedIn) {
+        throw new Error('Login failed');
+      }
+    };
+    await use(performLogin);
+  },
+});
 
-        // Clean up the fixture.
-        await loginDemo.removeAll();
-    }
-})
-exports.expect = base.expect;
+exports.expect = test.expect;

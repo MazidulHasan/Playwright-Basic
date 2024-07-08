@@ -1,14 +1,15 @@
 exports.DashBoardPage  = class DashBoardPage{
     constructor(page){
         this.page = page;
-        // this.userName = "//input[@placeholder='Username']";
+        this.dashBoardText = "//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']";
         // this.password = "//input[@placeholder='Password']";
         // this.loginButton = "//button[@type='submit']";
     }
 
     async checkDashBoard(){
-        const currentURL = this.page.url();
-        return currentURL !== "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
+        await this.page.waitForSelector(this.dashBoardText);
+        const isDashboardVisible = await this.page.isVisible(this.dashBoardText);
+        return isDashboardVisible;
     }
 
     // async gotoURL(){
