@@ -27,7 +27,7 @@ module.exports = defineConfig({
   // reporter: [['json', { outputFile: 'json_results.json' }]],
   // reporter: [['junit', { outputFile: 'junit_results.xml' }]],
   // reporter: [['allure-playwright', { outputFolder: 'my-allure-results' }]],
-  reporter: [["line"], ["allure-playwright"]],
+  // reporter: [["line"], ["allure-playwright"]],
 
   // all reporting combined
   // reporter: [ ['list'],
