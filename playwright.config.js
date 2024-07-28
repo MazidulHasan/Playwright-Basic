@@ -1,6 +1,11 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, './env-files/.env.uat') });
+
+// Read from ".env" file.
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
