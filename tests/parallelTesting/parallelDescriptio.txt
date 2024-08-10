@@ -1,0 +1,19 @@
+>By default, test files are run in parallel. Tests in a single file are 
+    run in order, in the same worker process.
+
+>To run tests in a single file in parallel we need to configure tests 
+    using test.describe.configure
+
+>We can configure entire project to have all tests in all files to run 
+    in parallel using testProject.fullyParallel or testConfig.fullyParallel.
+
+>If we want to disable parallelism then limit the number of workers to one.
+
+Worker processes:
+All tests run in worker processes. These processes are OS processes, where 
+    tests are running independently All workers have identical environments and each starts its own browser
+
+Limit workers:
+We can control the maximum number of parallel worker processes via command 
+    line or in the configuration file.
+    npx playwright test-workers 4
